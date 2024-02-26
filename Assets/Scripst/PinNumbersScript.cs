@@ -7,55 +7,28 @@ using UnityEngine.UI;
 
 public class PinNumbersScript : MonoBehaviour
 {   
-    public TextMeshProUGUI _FirstPinText;
-    public TextMeshProUGUI _SecondPinText;
-    public TextMeshProUGUI _ThirdPinText;
+
     public int FirstPinNumber;
     public int SecondPinNumber;
     public int ThirdPinNumber;
-    public GameObject WinScreen;
-    public TextMeshProUGUI _TimerText;
-    public float TotalTime;
-    private float currentTime;
-
     private int drillCount = 0; 
     private int hammerCount = 0; 
     private int masterKeyCount = 0; 
 
     public TextMeshProUGUI totalClicksText; 
+    private PinOutput pinOutput;
 
-    public GameObject LoseScreen;
 
     void Start()
     {
-        PinNumberText();
-        currentTime = TotalTime;
-    }
-    void Update()
-    {
-        currentTime -= Time.deltaTime;
-        _TimerText.text = (Mathf.Round(currentTime)).ToString();
-        if(currentTime <= 0f)
+        pinOutput = GetComponent<PinOutput>();
+        if (pinOutput == null)
         {
-            LoseScreen.SetActive(true);
-            _TimerText.text = "0";
+            Debug.LogError("Ошибка");
+            return;
         }
-
-        if(FirstPinNumber == 5 & SecondPinNumber == 5 & ThirdPinNumber == 5)
-        {
-            WinScreen.SetActive(true);
-            _TimerText.text = "0";
-        }
+        pinOutput.PinNumberText();
     }
-
-
-    private void PinNumberText()
-    {
-        _FirstPinText.text = FirstPinNumber.ToString();
-        _SecondPinText.text = SecondPinNumber.ToString();
-        _ThirdPinText.text = ThirdPinNumber.ToString();
-    }
-
 
     public void hackingDrill()
     {
@@ -73,7 +46,7 @@ public class PinNumbersScript : MonoBehaviour
             SecondPinNumber = 0;
         }
 
-        PinNumberText();
+        pinOutput.PinNumberText();
         drillCount++;
         UpdateTotalClicks();
     }
@@ -95,7 +68,7 @@ public class PinNumbersScript : MonoBehaviour
             ThirdPinNumber--;
         }
 
-        PinNumberText();
+        pinOutput.PinNumberText();
         hammerCount++;
         UpdateTotalClicks();
     }
@@ -117,7 +90,7 @@ public class PinNumbersScript : MonoBehaviour
             ThirdPinNumber++;
         }
 
-        PinNumberText();
+        pinOutput.PinNumberText();
         masterKeyCount++;
         UpdateTotalClicks();
     }
