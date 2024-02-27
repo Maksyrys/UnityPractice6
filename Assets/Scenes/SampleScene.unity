@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _TimerText: {fileID: 718887379}
-  TotalTime: 60
+  TotalTime: 3
   LoseScreen: {fileID: 1267994609}
   WinScreen: {fileID: 529578766}
 --- !u!114 &265935416
