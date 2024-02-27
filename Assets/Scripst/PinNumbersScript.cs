@@ -27,10 +27,9 @@ public class PinNumbersScript : MonoBehaviour
             Debug.LogError("Ошибка");
             return;
         }
-        pinOutput.PinNumberText();
     }
 
-    public void hackingDrill()
+    public void Drill()
     {
         if (FirstPinNumber < 10)
         {
@@ -51,7 +50,7 @@ public class PinNumbersScript : MonoBehaviour
         UpdateTotalClicks();
     }
 
-   public void hackingHammer()
+   public void Hammer()
     {
         if (FirstPinNumber > 0)
         {
@@ -73,7 +72,7 @@ public class PinNumbersScript : MonoBehaviour
         UpdateTotalClicks();
     }
 
-    public void hackingMasterKey()
+    public void MasterKey()
     {
         if (FirstPinNumber > 0)
         {
@@ -99,4 +98,6 @@ public class PinNumbersScript : MonoBehaviour
     {
         totalClicksText.text = (drillCount + hammerCount + masterKeyCount).ToString();
     }
+
+
 }

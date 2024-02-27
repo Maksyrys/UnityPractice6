@@ -972,7 +972,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 265935413}
         m_TargetAssemblyTypeName: PinNumbersScript, Assembly-CSharp
-        m_MethodName: hackingDrill
+        m_MethodName: Drill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2018,7 +2018,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 265935413}
         m_TargetAssemblyTypeName: PinNumbersScript, Assembly-CSharp
-        m_MethodName: hackingMasterKey
+        m_MethodName: MasterKey
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2326,7 +2326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 265935413}
         m_TargetAssemblyTypeName: PinNumbersScript, Assembly-CSharp
-        m_MethodName: hackingHammer
+        m_MethodName: Hammer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

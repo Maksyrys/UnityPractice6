@@ -20,13 +20,18 @@ public class PinOutput : MonoBehaviour
             Debug.LogError("Ошибка");
             return;
         }
+        PinNumberText();
     }
 
     public void PinNumberText()
     {
+        if(number.FirstPinNumber != null && number.SecondPinNumber != null && number.ThirdPinNumber != null)
+        {
             _FirstPinText.text = number.FirstPinNumber.ToString();
             _SecondPinText.text = number.SecondPinNumber.ToString();
-            _ThirdPinText.text = number.ThirdPinNumber.ToString();
+            _ThirdPinText.text = number.ThirdPinNumber.ToString(); 
+        }
+            
         
     }
 }
